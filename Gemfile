@@ -44,6 +44,13 @@ gem 'pundit'
 #redcarpet Markdown Parser
 gem 'redcarpet'
 
+#images with Carrierwave MiniMagick Fog Amazon s3
+gem 'carrierwave'
+gem 'mini_magick'
+
+#Amazon S3 Cloud Service Library uploading to S3 easier with Fog
+gem 'fog'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
