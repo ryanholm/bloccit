@@ -51,6 +51,9 @@ gem 'mini_magick'
 #Amazon S3 Cloud Service Library uploading to S3 easier with Fog
 gem 'fog'
 
+#Pagination aka Google Search Results
+gem 'will_paginate', '~> 3.0.5'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
