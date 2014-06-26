@@ -39,6 +39,10 @@ topics = Topic.all
     title:  Faker::Lorem.sentence,
     body:   Faker::Lorem.paragraph
   )
+
+  #set the created_aat to a time within the past year
+  post.update_attribute(:created_at, rand(10.minutes .. 1.year).age)
+  post.update_rank
 end
 posts = Post.all
 
