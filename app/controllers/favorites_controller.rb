@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   # for the create action
-  authorize favorite
+  authorize :favorite
   def create
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
@@ -16,7 +16,7 @@ class FavoritesController < ApplicationController
   end
 
   # for the destroy action
-  authorize favorite
+  authorize :favorite
   def destroy
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
