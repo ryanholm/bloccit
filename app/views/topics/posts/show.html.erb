@@ -25,6 +25,7 @@
       </small>
     </div>
     <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %>
+    <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
     <!-- Below, this was added from the checkpoint Popular Post, not sure if it is correctly placed and might need to be adjusted from the comments checkpoint -->
     <%= render partial: 'comments/comment', collection: @comments %>
   </div>
