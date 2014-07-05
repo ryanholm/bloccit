@@ -59,7 +59,7 @@ end
 admin = User.new(
   name:     'Admin User',
   email:    'admin@example.com',
-  password: 'helloworld',
+  password: 'Helloworld',
   role:     'admin'
 )
 admin.skip_confirmation!
@@ -69,7 +69,7 @@ admin.save
 moderator = User.new(
   name:     'Moderator User',
   email:    'moderator@example.com', 
-  password: 'helloworld',
+  password: 'Helloworld',
   role:     'moderator'
 )
 moderator.skip_confirmation!
@@ -79,7 +79,7 @@ moderator.save
 member = User.new(
   name:     'Member User',
   email:    'member@example.com',
-  password: 'helloworld',
+  password: 'Helloworld',
 )
 member.skip_confirmation!
 member.save
