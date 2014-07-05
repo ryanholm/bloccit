@@ -33,9 +33,9 @@ topics = Topic.all
 
 # Create Posts
 50.times do
-  Post.create(
+  post = Post.create(
     user:   users.sample,
-      topic:  topics.sample,
+    topic:  topics.sample,
     title:  Faker::Lorem.sentence,
     body:   Faker::Lorem.paragraph
   )
@@ -47,12 +47,17 @@ end
 posts = Post.all
 
 # Create Comments
-200.times do
-  Comment.create(
-    # user: users.sample,   # we have not yet associated Users with Comments
+100.times do
+  comment = Comment.create(
+    user: users.sample, 
     post: posts.sample,
     body: Faker::Lorem.paragraph
   )
+
+
+  #set the created_at to a time within the past year
+  comment.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+
 end
 
 # Create an admin user
@@ -86,5 +91,6 @@ member.save
 
 puts "Seed finished"
 puts "#{User.count} users created"
+puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
