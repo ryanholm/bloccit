@@ -33,14 +33,5 @@ class User < ActiveRecord::Base
   def role?(base_role)
     role == base_role.to_s
   end   
-# Not sure about the following lines.  Need to check favorited and
-#Voted checkpoints to see if I forgot something here....see below
- # def favorited( post )
-  #  self.favorites.where( post_id: post.id ).first
-  #end
-
-  #def voted( post )
-    #self.votes.where( post_id: post.id ).first
-  #end  
 end
 
