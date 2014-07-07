@@ -1,4 +1,5 @@
 class Topics::PostsController < ApplicationController
+
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
@@ -42,17 +43,16 @@ class Topics::PostsController < ApplicationController
       redirect_to [@topic, @post]
     else
       flash[:error] = "There was an error saving the post. Please try again."
-      render :new
+      render :edit
     end
-  end
-
-  def post_params
-    params.require(:post).permit(:title, :body, :image)
   end
 
   def destroy
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
+    auothorize @post
+    @comments = @post.comments
+    @comment = Comment.new
 
     title = @post.title
     authorize @post
@@ -64,4 +64,11 @@ class Topics::PostsController < ApplicationController
       render :show
     end
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :image)
+  end
+
 end
