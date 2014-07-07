@@ -92,6 +92,7 @@ member.save
 User.first.update_attributes (
     email: 'ryan.j.holm@gmail.com',
     password: 'helloworld',
+    role: 'admin'
 )
 
 puts "Seed finished"
