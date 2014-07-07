@@ -89,6 +89,11 @@ member = User.new(
 member.skip_confirmation!
 member.save
 
+User.first.update_attributes (
+    email: 'ryan.j.holm@gmail.com',
+    password: 'helloworld',
+)
+
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
