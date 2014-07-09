@@ -28,10 +28,9 @@ class User < ActiveRecord::Base
         order('rank DESC') # Instructs the database to order the results in descending order, by the rank that we created in this query.  (rank = comment count + post count)     
   end
 
-  private
-
   def role?(base_role)
     role == base_role.to_s
-  end   
+  end
+     
 end
 
