@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   def self.top_rated
     self.select('users.*'). #select all attributes of the user
         select('COUNT(DISTINCT comments.id) AS comments_count'). # Count the comments made by a user
-        select('COUNT(DISTINCT post.id) AS posts_count'). #Count the posts made by the user
+        select('COUNT(DISTINCT posts.id) AS posts_count'). #Count the posts made by the user
         select('COUNT(DISTINCT comments.id) + COUNT(DISTINCT posts.id) AS rank').
         joins(:posts). #Ties the posts table to the users table, via the user_id
         joins(:comments). #Ties the comments table to the users table, via the user_id
